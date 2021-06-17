@@ -2,9 +2,10 @@ package com.BridgeLabz.moodAnalyser;
 
 /************
  * 
- * @author ANAND 
- * UC-1-ability to analyse and Respond Happy or Sad Mood message
- * Refactoring the test code test case for  mood Analyser should have two constructors
+ * @author ANAND
+ *  UC-1-ability to analyse and Respond Happy or Sad Mood message
+ *  Refactoring the code mood Analyser should have two constructors
+ *  UC-2-Handling exceptions when user provides invalid mood like Null
  *
  ********/
 
@@ -21,14 +22,16 @@ public class MoodAnalyser {
 		this.message = message;
 	}
 
-	// method to analyse the mode
+	// method to Handle the exception and analyse the mode
 	public String analyseMood() {
-		if (message.contains("Sad")) {
-			return "SAD";
-		} else {
+		try {
+			if (message.contains("Sad")) {
+				return "SAD";
+			}
+		} catch (NullPointerException e) {
 			return "HAPPY";
 		}
+		return null;
 	}
-
 
 }
