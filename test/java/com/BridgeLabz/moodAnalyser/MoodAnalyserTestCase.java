@@ -7,24 +7,25 @@ import org.junit.Test;
  * 
  * @author ANAND 
  * UC-1-TestCase to analyse and Respond Happy or Sad Mood
- *
+ * Refactoring test case for  mood Analyser should have two constructors
  */
 public class MoodAnalyserTestCase {
 
-	// TestCase to analyse and Respond Sad Mood
+	// Refactoring test case for mood Analyser should have two constructors
 	@Test
 	public void givenMessage_WhenSad_ShouldReturnSad() {
-		MoodAnalyser moodAnalyser = new MoodAnalyser();
-		String mood = moodAnalyser.analyseMood("I am in Sad Mood");
+		MoodAnalyser moodAnalyser = new MoodAnalyser("I am in Sad Mood");
+		String mood = moodAnalyser.analyseMood();
 		Assert.assertEquals("SAD", mood);
 	}
 
-	// TestCase to analyse and Respond Happy Mood
+	// Refactoring test case for mood Analyser should have two constructors
 	@Test
 	public void givenMessage_WhenHappy_ShouldReturnHappy() {
-		MoodAnalyser moodAnalyser = new MoodAnalyser();
-		String mood = moodAnalyser.analyseMood("I am in Happy Mood");
+		MoodAnalyser moodAnalyser = new MoodAnalyser("I am in Happy Mood");
+		String mood = moodAnalyser.analyseMood();
 		Assert.assertEquals("HAPPY", mood);
 	}
-
 }
+
+
